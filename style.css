@@ -23,16 +23,23 @@ footer {
 .logo {
     max-width: 20%;
     max-height: 20%;
-    justify-content: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
 .hdg {
-    color:#123524
+    color:#123524;
 }
 
 footer>p {
     color:#F7F7F2;
     font-weight: 200;
+}
 
 h1 {
     font-weight:600;
@@ -48,3 +55,47 @@ h1 {
     800: ExtraBold
     900: Black
 */
+
+a:link {
+    color:#123524;
+
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer.a {
+    color:#F7F7F2;
+}
+
+footer.a:visited {
+    color:#F7F7F2;
+    text-decoration: underline;
+}
+
+img.align-center {
+    display: blcok;
+    margin: 0px auto;
+}
+
+/* navigation */
+    /* unvisited link */
+    nav.a:link {
+    color: red;
+    }
+
+    /* visited link */
+    nav.a:visited {
+    color: green;
+    }
+
+    /* mouse over link */
+    nav.a:hover {
+    color: hotpink;
+    }
+
+    /* selected link */
+    nav.a:active {
+    color: blue;
+    }
