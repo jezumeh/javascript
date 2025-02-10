@@ -14,22 +14,24 @@ header {
 
 main {
     background-color: #F7F7F2;
+    padding: 5px 25px 5px 25px; 
 }
 
 footer {
     background-color: #123524;
+    padding: 5px 25px 5px 25px; 
 }
 
 .logo {
-    max-width: 20%;
-    max-height: 20%;
+    width: 15%;
+    height: auto;
 }
 
 .center {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    text-align: center;
 }
 
 .hdg {
@@ -56,46 +58,53 @@ h1 {
     900: Black
 */
 
-a:link {
-    color:#123524;
-
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-footer.a {
-    color:#F7F7F2;
-}
-
-footer.a:visited {
-    color:#F7F7F2;
-    text-decoration: underline;
-}
-
-img.align-center {
-    display: blcok;
-    margin: 0px auto;
-}
-
 /* navigation */
     /* unvisited link */
-    nav.a:link {
-    color: red;
+    nav a:link {
+    color:#123524;
     }
 
     /* visited link */
-    nav.a:visited {
-    color: green;
+    nav a:visited {
+    color:#123524;
     }
 
     /* mouse over link */
-    nav.a:hover {
-    color: hotpink;
+    nav a:hover {
+    font-weight: 700;
     }
 
     /* selected link */
-    nav.a:active {
-    color: blue;
+    nav a:active {
+    color:#123524;
+    }
+
+/* footer links */
+    /* unvisited link */
+    footer a:link {
+        color:#F7F7F2;
+        font-weight: 200;
+        }
+
+    /* visited link */
+    footer a:visited {
+        color:#F7F7F2;
+        font-weight: 200;
+    }
+
+    /* mouse over link */
+    footer a:hover {
+        color:#F7F7F2;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    /* selected link */
+    footer a:active {
+        color:#F7F7F2;
+        font-weight: 200;
+    }
+
+    .course {
+        text-transform: uppercase;
     }
