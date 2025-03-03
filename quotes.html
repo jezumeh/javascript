@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>JavaScript | Home</title>
+	<title>JavaScript | Quotes</title>
 
 	<link rel="icon" type="image/png" href="content/jjvj-favicon.png">
 
@@ -11,6 +11,7 @@
 
 
 	<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -24,11 +25,23 @@
 
 	<main>
 		<section id="quotes">
-            <hgroup>
-                <h1 class="hdg">Quotes</h1>
+            <hgroup class="hdg">
+                <h1 >Quotes</h1>
                 <h2>About Persistence</h2>
             </hgroup>
-			
+			<script>
+				//prompt for quote
+				var quoteNumb = prompt("Pick a number between 1 and 50.")
+				
+				// Quote of the Day
+				var quote1 = ["This is quote 1."];
+				var quote2 = ["This is quote 2."];
+				var quote3 = ["This is quote 3."];
+		
+				var dailyQuote = [quote1, quote2, quote3];
+				document.write(dailyQuote);
+			</script>
+			<p>idk</p>
 
 		</section>
 
@@ -40,10 +53,5 @@
 		view my <a href="https://read.cv/jesusjvelajr" target="_blank">design portfolio</a>, <br>
 		or read my latest <a href="https://www.figma.com/proto/O56DaLlGr1hAqR78mQDoCD/Case-Study?node-id=2-3322&p=f&t=Sos6zBtkPGoqR1eA-1&scaling=scale-down-width&content-scaling=fixed&page-id=0%3A1" target="_blank">UI case study</a>.</p>
 	</footer>
-
-	<script>
-		var guest = prompt("Hi! What's your name?");
-		document.write("<h1>Welcome to JavaScript, " + guest + "!</h1>");
-	</script>
 </body>
 </html>
