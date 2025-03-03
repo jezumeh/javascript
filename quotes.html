@@ -24,10 +24,10 @@
 	</header>
 
 	<main>
-		<section id="quotes">
+		<section id="quote_of_the_day">
             <hgroup class="hdg">
-                <h1 >Quotes</h1>
-                <h2>About Persistence</h2>
+                <h1 >Daily Quote</h1>
+                <p>About Persistence</p>
             </hgroup>
 			<script>
 				//prompt for number
@@ -47,11 +47,64 @@
 		
 				var dailyQuote = [quote0, quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9];
 
-				document.write(dailyQuote[50 % quoteNumb]); //remainder of 50
+				var quoteRemainder = [50 % quoteNumb];
+
+				/* document.write(dailyQuote[50 % quoteNumb]); //remainder of 50
+				^^^^^ I forgot the remainder could be any number from 1-49, so this no longer worked.*/
+
+				//I kept the 10 quotes, but redistributed them to account for all possible remainders.
+				var quoteRange;
+				if (quoteRemainder < 5){
+						quoteRange = 0;
+					} else if (quoteRemainder < 10){
+						quoteRange = 1;
+					} else if (quoteRemainder < 15){
+						quoteRange = 2;
+					} else if (quoteRemainder < 20){
+						quoteRange = 3;
+					} else if (quoteRemainder < 25){
+						quoteRange = 4;
+					} else if (quoteRemainder < 30){
+						quoteRange = 5;
+					} else if (quoteRemainder < 35){
+						quoteRange = 6;
+					} else if (quoteRemainder < 40){
+						quoteRange = 7;
+					} else if (quoteRemainder < 45){
+						quoteRange = 8;
+					} else {
+						quoteRange = 9;
+					};
+
+				document.write(dailyQuote[quoteRange]); //remainder of 50
 			</script>
 		</section>
 
-		<section id="favWebsiteUrls">
+		<section id="favorite_website_urls">
+			<h1>Top 3 URLs</h1>
+			<ol id="top3Urls"> <!--Where the updated list will be posted-->
+				<li id="firstUrl"></li>
+				<li id="secondUrl"></li>
+				<li id="thirdUrl"></li>
+			</ol>
+
+			<script>
+				//Array for favorite URL
+				var favUrl0 = "https://type.method.ac";
+				var favUrl1 = "https://bezier.method.ac";
+				var favUrl2 = "https://designercize.com";
+
+				var favUrl = [favUrl0, favUrl1, favUrl2];
+
+				//prompt for favorite URL
+				var newFavUrl = prompt("What is your favorite URL?");
+				favUrl.unshift(newFavUrl); // prompt response becomes new top choice
+
+				//these will migrate to the above ordered list
+				document.getElementById("firstUrl").innerHTML = favUrl[0];
+				document.getElementById("secondUrl").innerHTML = favUrl[1];
+				document.getElementById("thirdUrl").innerHTML = favUrl[2];
+			</script>
 
 		</section>
 
