@@ -30,18 +30,28 @@
                 <h2>About Persistence</h2>
             </hgroup>
 			<script>
-				//prompt for quote
+				//prompt for number
 				var quoteNumb = prompt("Pick a number between 1 and 50.")
 				
-				// Quote of the Day
-				var quote1 = ["This is quote 1."];
-				var quote2 = ["This is quote 2."];
-				var quote3 = ["This is quote 3."];
+				// Quote of the Day Array
+				var quote0 = ["&quot;It always seems impossible until it's done.&quot; &mdash;Nelson Mandela"];
+				var quote1 = ["&quot;Success consists of going from failure to failure without loss of enthusiasm.&quot; &mdash;Winston Churchill"];
+				var quote2 = ["&quot;Energy and persistence conquer all things.&quot; &mdash;Benjamin Franklin"];
+				var quote3 = ["&quot;Knowing trees, I understand the meaning of patience. Knowing grass, I can appreciate persistence.&quot; &mdash;Hal Borland"];
+				var quote4 = ["&quot;The best way out is always through.&quot; &mdash;Robert Frost"];
+				var quote5 = ["&quot;Courage doesn&apos;t always roar. Sometimes courage is the quiet voice at the end of the day saying &apos;I will try again tomorrow.&apos;&quot; &mdash;Mary Anne Radmacher"];
+				var quote6 = ["&quot;Fall seven times and stand up eight.&quot; &mdash;Japanese Proverb"];
+				var quote7 = ["&quot;Failure is only the opportunity to begin again, this time more intelligently.&quot; &mdash;Henry Ford"];
+				var quote8 = ["&quot;It does not matter how slowly you go so long as you do not stop.&quot; &mdash;Confucius"];
+				var quote9 = ["&quot;We will either find a way or make one.&quot; &mdash;Hannibal"];
 		
-				var dailyQuote = [quote1, quote2, quote3];
-				document.write(dailyQuote);
+				var dailyQuote = [quote0, quote1, quote2, quote3, quote4, quote5, quote6, quote7, quote8, quote9];
+
+				document.write(dailyQuote[50 % quoteNumb]); //remainder of 50
 			</script>
-			<p>idk</p>
+		</section>
+
+		<section id="favWebsiteUrls">
 
 		</section>
 
