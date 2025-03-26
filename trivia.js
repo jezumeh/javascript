@@ -1,8 +1,12 @@
 /*
+Beginning Web Programming
 SP25.ITSE.1311.82701
 Assignment: Strings, Numbers, Dates, and Regular Expressions
 -JJVJ
 */
+
+//Assignment Task: Use the Date Object Methods
+var todaysDate = new Date();
 
 //Array and Variable Declarations
 var question = [
