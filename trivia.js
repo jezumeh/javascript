@@ -5,8 +5,35 @@ Assignment: Strings, Numbers, Dates, and Regular Expressions
 -JJVJ
 */
 
-//Assignment Task: Use the Date Object Methods
-var todaysDate = new Date();
+//Use the Date Object Methods
+
+function dateAndGreeting(){
+    var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesay', 'Thursday', 'Friday', 'Saturday'];
+    var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var am_pm;
+
+    var rawDate = new Date();
+
+    var hour = rawDate.getHours(); //greeting customization
+    if (hour < 7){
+        am_pm = "Night";
+    } else if (hour < 12){
+        am_pm = "Morning";
+    } else if (hour < 17){
+        am_pm = "Afternoon";
+    } else { //17:00-23:59
+        am_pm = "Evening";
+    }
+    
+    nameInput = prompt("Name:");
+
+    if (nameInput !== null){
+        nameInput = nameInput.charAt(0).toUpperCase() + nameInput.slice(1); //Capitalizes first letter & delete original index value; STILL WORK ON THIS. TRY TO USE TXTBK CODE
+    }
+
+    document.write ("<h1>" + "Good " + am_pm + " " + nameInput + "</h1>"); //Greeting
+    document.write("<h2>Today is a lovely " + weekDay[rawDate.getDay()] + " in " + monthName[rawDate.getMonth()] + ".</h2>"); //Date
+}
 
 //Array and Variable Declarations
 var question = [
