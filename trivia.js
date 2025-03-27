@@ -5,8 +5,6 @@ Assignment: Strings, Numbers, Dates, and Regular Expressions
 -JJVJ
 */
 
-//Use the Date Object Methods
-
 function dateAndGreeting(){
     var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesay', 'Thursday', 'Friday', 'Saturday'];
     var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -24,12 +22,18 @@ function dateAndGreeting(){
     } else { //17:00-23:59
         am_pm = "Evening";
     }
-    
-    nameInput = prompt("Name:");
 
-    if (nameInput !== null){
-        nameInput = nameInput.charAt(0).toUpperCase() + nameInput.slice(1); //Capitalizes first letter & delete original index value; STILL WORK ON THIS. TRY TO USE TXTBK CODE
-    }
+    
+
+    var nameInput = prompt("Name:");
+
+    
+    // startCase = nameInput.match(/b\w/g); // ID starting character/s
+    /* startCase = nameInput.toUpperCase(); */
+    // startCase.toUpperCase(); // assign start case to starting character/s
+
+    
+
 
     document.write ("<h1>" + "Good " + am_pm + " " + nameInput + "</h1>"); //Greeting
     document.write("<h2>Today is a lovely " + weekDay[rawDate.getDay()] + " in " + monthName[rawDate.getMonth()] + ".</h2>"); //Date
