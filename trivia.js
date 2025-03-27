@@ -23,20 +23,35 @@ function dateAndGreeting(){
         am_pm = "Evening";
     }
 
-    
+    var inputName = prompt('Name:');
 
-    var nameInput = prompt("Name:");
+    function capitalizeFirstLetter(name) {
+      return name.charAt(0).toUpperCase() + name.slice(1); //tbd: implement start case on entire text string (i.e. jesus javier ==> Jesus Javier)
+    }
 
-    
-    // startCase = nameInput.match(/b\w/g); // ID starting character/s
-    /* startCase = nameInput.toUpperCase(); */
-    // startCase.toUpperCase(); // assign start case to starting character/s
+    var displayName = capitalizeFirstLetter(inputName);
 
-    
-
-
-    document.write ("<h1>" + "Good " + am_pm + " " + nameInput + "</h1>"); //Greeting
+    document.write ("<h1>" + "Good " + am_pm + " " + displayName + "</h1>"); //Greeting
     document.write("<h2>Today is a lovely " + weekDay[rawDate.getDay()] + " in " + monthName[rawDate.getMonth()] + ".</h2>"); //Date
+}
+
+function userInformation(){
+    var emailInput;
+    var emailUser;
+    var emailRegex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
+    var emailUserRegex = /^[-\w.]/;
+    do {
+        emailInput = prompt('Email Address:');
+        emailValidate = emailInput.match(emailRegex);
+        if (! emailValidate){
+            alert('Opps! Make sure that you correctly format your email (i.e. "email@domain.com")') //no match
+        } else{
+            //email accepted
+            //emailUser = emailValidate.match(emailUserRegex);
+        }
+    } while (emailValidate >= 0); //run until a value is indexed.
+
+    document.write(emailValidate);
 }
 
 //Array and Variable Declarations
