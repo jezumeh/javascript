@@ -39,7 +39,7 @@ function userInformation(){
     var emailInput;
     var emailUser;
     var emailRegex = /^[-\w.]+@([A-z0-9][-A-z0-9]+\.)+[A-z]{2,4}$/;
-    var emailUserRegex = /^[-\w.]/;
+    //var emailUserRegex = /^[-\w.]/;
     do {
         emailInput = prompt('Email Address:');
         emailValidate = emailInput.match(emailRegex);
@@ -47,11 +47,12 @@ function userInformation(){
             alert('Opps! Make sure that you correctly format your email (i.e. "email@domain.com")') //no match
         } else{
             //email accepted
-            //emailUser = emailValidate.match(emailUserRegex);
         }
     } while (emailValidate >= 0); //run until a value is indexed.
 
-    document.write(emailValidate);
+    emailUser = emailValidate[0].match(emailUserRegex);
+
+    document.write(emailUser[0]);
 }
 
 //Array and Variable Declarations
