@@ -1,0 +1,18 @@
+.profilePic {
+width: 30%;
+height: auto;
+border-radius: 50%;
+border: 3px navy;
+}
+
+.jobRole {
+text-decoration: underline;
+}
+
+h1 {
+    color: navy;
+}
+
+#professionalGoals h3{
+color: darkgreen;
+}

@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Part of VS Code Template; not in Lesson 2 template.
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-    <title>First Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | JJVJ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Hello World</h1>
-    <nav>
-        <a href="">Lab 1</a>
-        <a href="">Lab 2</a>
-        <a href="">Lab 3</a>
-    </nav>
-    <p>This is my test page.</p>
-    <p>I'm using it to test my uploads.</p>
+    <header>
+        <h1>Jesus' JavaScript Coursework</h1>
+        <img class="profilePic" src="content/jjvj-untd-portrait-square.jpg" alt="Upper-body portrait of Jesus">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="">Lab 1</a>
+            <a href="">Lab 2</a>
+            <a href="">Lab 3</a>
+        </nav>
+    </header>
+    <main>
+        <div id="professionalGoals">
+            <h2>Professional Goals</h2>
+            <h3>Start as a <span class="jobRole">Communications Specialist</span></h3>
+                <p>I am passionate about information being clear, from wayfinding signs in a building to kindly worded email to show appreciation to a coworker.</p>
+            <h3>Progress as a <span class="jobRole">Design Researcher</span></h3>
+                <p>I am also passionate about personal learning, and it's all starts with how we design the way we think and present our thoughts.</p>
+            <h3>Become a <span class="jobRole">Professor</span> who teaches Design Research and Digital Communications</h3>
+                <p>I think that it will be within my realm of possibility to begin teaching as an instructor at <a href="https://www.dallascollege.edu/study/digital-art-and-design/">Dallas College</a>.</p>
+                
+        </div>
+    </main>
+    <footer>
+        <p></p>
+    </footer>
+    <script>
+		var guest = prompt("Hi! What's your name?");
+		document.write("<h1>Welcome to JavaScript, " + guest + "!</h1>");
+	</script>
+    
 </body>
 </html>
