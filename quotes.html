@@ -26,6 +26,20 @@
                     "&quot;Knowing trees, I understand the meaning of patience. Knowing grass, I can appreciate persistence.&quot; &mdash;Hal Borland",
                     "&quot;The best way out is always through.&quot; &mdash;Robert Frost"
                 ]
+                //numberPick is premptively set to be a number in standard form e.g. 5 not five
+                var numberPick = Number(prompt("Pick a number."));
+                var quoteIndex = numberPick % 5;
+                document.write(quoteOfTheDay [quoteIndex]);
+            </script>
+        </section>
+        <section id="favoriteURL">
+            <script>
+                var listOfFavoriteURLs = [
+                    "https://type.method.ac" 
+                    "https://bezier.method.ac" 
+                    "https://designercize.com"
+                ]
+
             </script>
         </section>
     </main>
