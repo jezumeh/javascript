@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quotes | JJVJ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
@@ -49,6 +50,7 @@
                 //delete [0] url
                 favURLs.shift();
 
+                //populate top3URLs with HTML
                 for (var i = 0; i < favURLs.length; i++) {
                     document.getElementById("top3URLs").innerHTML += "<li><a href='" + favURLs[i] + "' target='_blank'>" + favURLs[i] + "</a></li>";
                 }
