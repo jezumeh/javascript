@@ -33,13 +33,28 @@
             </script>
         </section>
         <section id="favoriteURL">
+            <h2>Top 3 URLs</h2>
+            <ol id="top3URLs">
+                /!--list comes from array--/
+            </ol>
             <script>
-                var listOfFavoriteURLs = [
+                var favURLs = [
                     "https://type.method.ac" 
                     "https://bezier.method.ac" 
                     "https://designercize.com"
                 ]
+                var newFavURL = prompt("What is your favorite URL?");
+                //add new url
+                favURLs.push(newFavURL);
+                //delete [0] url
+                favURLs.shift();
 
+                for (var i = 0; i < favURLs.length; i++) {
+                    document.getElementById("top3URLs").innerHTML += "<li><a href='" + favURLs[i] + "'>" + favURLs[i] + "</a></li>";
+}
+
+
+                }
             </script>
         </section>
     </main>
