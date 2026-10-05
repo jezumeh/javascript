@@ -26,7 +26,7 @@
                     "&quot;Knowing trees, I understand the meaning of patience. Knowing grass, I can appreciate persistence.&quot; &mdash;Hal Borland",
                     "&quot;The best way out is always through.&quot; &mdash;Robert Frost"
                 ]
-                //numberPick is premptively set to be a number in standard form e.g. 5 not five
+                //numberPick is explicitly set to be a number in standard form e.g. 5 not five
                 var numberPick = Number(prompt("Pick a number."));
                 var quoteIndex = numberPick % 5;
                 document.write(dailyQuote [quoteIndex]);
@@ -35,12 +35,12 @@
         <section id="favoriteURL">
             <h2>Top 3 URLs</h2>
             <ol id="top3URLs">
-                /!--list comes from array--/
+                <!--top3URLs list comes from array-->
             </ol>
             <script>
                 var favURLs = [
-                    "https://type.method.ac" 
-                    "https://bezier.method.ac" 
+                    "https://type.method.ac", 
+                    "https://bezier.method.ac", 
                     "https://designercize.com"
                 ]
                 var newFavURL = prompt("What is your favorite URL?");
@@ -50,10 +50,7 @@
                 favURLs.shift();
 
                 for (var i = 0; i < favURLs.length; i++) {
-                    document.getElementById("top3URLs").innerHTML += "<li><a href='" + favURLs[i] + "'>" + favURLs[i] + "</a></li>";
-}
-
-
+                    document.getElementById("top3URLs").innerHTML += "<li><a href='" + favURLs[i] + "' target='_blank'>" + favURLs[i] + "</a></li>";
                 }
             </script>
         </section>
