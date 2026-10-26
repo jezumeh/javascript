@@ -25,28 +25,35 @@ Professor [add name]
     </header>
     <main>
         <section id="stateCapitalQuiz">
-			<h1 class="hdg">State Capital Quiz</h1>
+			<h2 class="hdg">State Capital Quiz</h2>
             <!-- OLD SCRIPT
-
             <script>
                 var score = stateQuiz();
                 document.write('Final Score: ' + points);
             </script>
             -->
-
+            <h3>Score</h3>
             <!--New script-->
             <script>
                 var message = 'Your final score is ' + score + '!';
-                
                 document.write('<p>' + message + '</p>');
             </script>
 
-            <p>Answer Sheet</p>
-            <ol> <!-- R: check if I can pull this from the JS arrays and if it's required in assReqs-->
+            <h3>Answer Sheet</h3>
+            <script> //Inspired by Figure 3-5 (McFarland, 2014, p. 92)
+                var x = 0;
+                while (x<3){ 
+                    document.write('<p><b>Q/A:</b> ');
+                    document.write(statesAndCapitals[x][0] + ' ');
+                    document.write('<i>' + statesAndCapitals[x][1] + '.</i></p>');
+                    x++;
+                }
+            </script>
+            <!-- <ol>
                 <li>What is the capital of Texas? (Austin)</li>
                 <li>What is the capital of Georgia? (Atlanta)</li>
                 <li>What is the capital of Colorado? (Denver)</li>
-            </ol>
+            </ol> -->
 		</section>
     </main>
     <footer>
