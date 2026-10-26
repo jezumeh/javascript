@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--Lesson 6: Functions
+Jesus Javier Vela Jr.
+2026FA-ITSE-1311-1 Beginning Web Programming
+Professor [add name]
+25 October 2026-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | JJVJ</title> <!--R: Change title if needed-->
+    <script src="quiz.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Jesus' JavaScript Coursework</h1>
+        <img class="profilePic" src="content/jjvj-untd-portrait-square.jpg" alt="Upper-body portrait of Jesus">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quotes.html">Quotes</a>
+            <a href="secret-number-game.html">Secret Number Game</a>
+            <a href="quiz.html">Quiz</a> <!--R: check it nav title is correct in assignment reqs-->
+        </nav>
+    </header>
+    <main>
+        <section id="stateCapitalQuiz">
+			<h1 class="hdg">State Capital Quiz</h1>
+            <!-- OLD SCRIPT
+
+            <script>
+                var score = stateQuiz();
+                document.write('Final Score: ' + points);
+            </script>
+            -->
+
+            <!--New script-->
+            <script>
+                var message = 'Your final score is ' + score + '!';
+                
+                document.write('<p>' + message + '</p>');
+            </script>
+
+            <p>Answer Sheet</p>
+            <ol> <!-- R: check if I can pull this from the JS arrays and if it's required in assReqs-->
+                <li>What is the capital of Texas? (Austin)</li>
+                <li>What is the capital of Georgia? (Atlanta)</li>
+                <li>What is the capital of Colorado? (Denver)</li>
+            </ol>
+		</section>
+    </main>
+    <footer>
+        <p>&copy; 2026 Jesus Javier Vela Jr.</p>
+    </footer>
+</body>
+</html>
