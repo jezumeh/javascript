@@ -30,11 +30,11 @@ Submitted `secret-number-game.html` on 10/11/26.
 
 #### Lesson 6: Functions
 
-Submitted `quiz.html` on 10/18/26.
+Submitted `quiz.html` and `quiz.js` on 10/18/26.
 
 #### Lesson 7: Strings, Numbers, Dates, and Regular Expressions
 
-Submitted `trivia.html` on 10/25/26.
+Submitted `trivia.html` on 11/1/26.
 
 #### Lesson 8: Integrating JavaScript
 
