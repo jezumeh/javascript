@@ -2,8 +2,8 @@
 
 ## Header
 
-Jesus Javier Vela Jr. - JJVJ
-2026FA-ITSE-1311-1 Beginning Web Programming
+Jesus Javier Vela Jr. - JJVJ  
+2026FA-ITSE-1311-1 Beginning Web Programming  
 Professor Hyson
 
 ## Assignment Submissions
