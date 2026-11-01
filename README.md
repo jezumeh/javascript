@@ -68,8 +68,6 @@ Not submitted.
 
 ### Finishing Up
 
-Not submitted.
-
 #### Lesson 18: Finalize Your Web Site
 
 Not submitted.
