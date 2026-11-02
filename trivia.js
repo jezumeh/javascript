@@ -12,53 +12,139 @@ var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesay', 'Thursday', 'Friday', 
 var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var am_pm = ['Night', 'Morning', 'Afternoon', 'Evening'];
 
-var now = new Date(); // As taught by McFarland (2014, p. 492).
-
-var month = monthName[getMonth()]; // i = 0-11/January-December
-var day = weekday[getDay()]; // i = 0-6/Sunday-Saturday
-
-var time = getHours(); // i = 0-23
-
 function timeStamp(){
-    document.write('<p><i>' + month + ' ' + getDate() + ', ' + getFullYear() + '.</i></p>'); // e.g. "<p><i>November 1, 2026.</i></p>"
-}
+    var now = new Date(); // As taught by McFarland (2014, p. 492).
+    var month = monthName[now.getMonth()]; // i = 0-11/January-December
 
-var inputName;
+    document.write('<p><i>' + month + ' ' + now.getDate() + ', ' + now.getFullYear() + '.</i></p>'); // e.g. "<p><i>November 1, 2026.</i></p>"
+}
 
 // REQUIREMENT: Create a personalized greeting.
 
-function personalizedGreeting (){
-    //get someone's name and capitalize it
+function personalizedGreeting(){
+    var now = new Date();
+    var hour = now.getHours();
+    var amPm; //Based on McFarland (2014, p. 495, 503)
 
-    //get date x time
-    //make custom greeting
-    document.write('<p>' + 'Good' + am_pm[] + ', '); //customize time
-    document.write(displayName + '. '); //customize name
-    document.write('Today is a lovely ' + weekDay + ' in ' + monthName + '.</p>'); //customize month/date)
-    
-};
+    /* Replaced with a switch statement
+    if (hour < 6){ // 00:00-05:59
+        amPm = 'Night'; 
+    } else if (hour < 12){ // 06:00-11:59
+        amPm = 'Morning';
+    } else if (hour < 17){ // 12:00-16:59
+        amPm = 'Afternoon';
+    } else { // 17:00-23:59
+        amPm = 'Evening';
+    }
+    */
+
+    var introGreeting;
+
+    switch (true) { //If it is true that var hour is less than #, the greeting customizes.
+        case (hour < 6):
+            introGreeting = 'Good night, ';
+            break;
+        case (hour < 12):
+            introGreeting = 'Good morning, ';
+            break;
+        case (hour < 17): 
+            introGreeting = 'Good evening, ';
+            break;
+        default: 
+            introGreeting = 'Good night, ';
+    }
+
+    function capitalizeName (displayName){
+        displayName = displayName.trim();
+        return displayName.charAt(0).toUpperCase() + displayName.slice(1).toLowerCase();
+    }
+   
+    var displayName = prompt('Enter your name.'); //get someone's name
+
+    while (displayName.trim() === "" || displayName.includes(" ")) {
+        displayName = prompt ("Please enter only one name.");
+    }
+
+    displayName = capitalizeName(displayName);
+
+    /*
+    This version no longer applies
+
+    document.write('<p>Good ' + amPm + ', ' + displayName + '.</p>');
+    */
+
+    document.write('<p>' + introGreeting + displayName + '.</p>');
+}
 
 // REQUIREMENT: User Information
 
+var userEmail;
+var emailParts;
+var userName;
+var domainName;
+
+function validateEmail() { //emailRegex is from McFarland (2014, p. 480)
+    emailRegex = /^[\w!#$%&\'*+\/=?^`{|}~.-]+@(?:[a-z\d][a-z\d-]*(?:\.[a-z\d][a-z\d-]*)?)+\.(?:[a-z][a-z\d-]+)$/i;
+    return emailRegex.test(userEmail);
+}
+
+        function userInformation() {
+            userEmail = prompt('What is your email?'); //prompt for email
+            while (!validateEmail(userEmail)){ //fail
+                userEmail = prompt("Please enter a valid email address (e.g. jane.doe@email.com).")
+            }
+
+            emailParts = userEmail.split("@"); //separates email b4 & after @
+
+            userName = emailParts[0]; // ...@
+            domainName = emailParts[1]; // @...
+
+            document.write('<p><b>Username:</b> ' + userName + '. <b>Domain:</b> ' + domainName + '.</p>');
+        }
+
 // REQUIREMENT: Quote of the Day
+
+// inspired from McFarland (2014, p. 491)
+var dailyQuote = [
+    "&quot;It always seems impossible until it's done.&quot; &mdash;Nelson Mandela",
+    "&quot;Success consists of going from failure to failure without loss of enthusiasm.&quot; &mdash;Winston Churchill",
+    "&quot;Energy and persistence conquer all things.&quot; &mdash;Benjamin Franklin",
+    "&quot;Knowing trees, I understand the meaning of patience. Knowing grass, I can appreciate persistence.&quot; &mdash;Hal Borland",
+    "&quot;The best way out is always through.&quot; &mdash;Robert Frost"
+]
+var random; // creates random # to pick from.
+var rndQuote; // Selects random quote.
+
+function quoteOfTheDay(){
+    random = Math.floor(Math.random() * dailyQuote.length);
+    rndQuote = dailyQuote[random];
+
+    document.write('<p>' + rndQuote + '</p>');
+}
 
 // REQUIREMENT: Trivia Quiz Improved
 
 var score = 0;
-var guesses = 3; //previously var attempt
+var percentage; // to be calculated
+var guesses = 3;
 var gL = ['guesses left)', ' guess left)']; // guesses left [gL] (e.g. "2 guesses left").
 
 var statesAndCapitals = [
-    ['What is the capital of Texas?', 'Austin'], //i=0
-    ['What is the capital of Georgia?', 'Atlanta'], //i=1
-    ['What is the capital of Colorado?', 'Denver'] //i=2
+    ['What is the capital of Texas?', 'austin'], // i=0
+    ['What is the capital of Georgia?', 'atlanta'], // i=1
+    ['What is the capital of Colorado?', 'denver'] // i=2
 ]
 
-function stateQuiz(instance){ //instance will be var statesAndCapitals
+function Quiz(instance){ //instance will be var statesAndCapitals
     guesses = 3;
     while (guesses > 0){
-        var answer = prompt(instance[0], ''); // '' is an empty string in the response box
-        if (answer == instance[1]){
+        var answer = prompt(instance[0], '');
+
+        if (answer !== null){ //if a guess was given...
+            answer = answer.toLowerCase();
+        }
+
+        if (answer === instance[1]){ //if answer strictly equals instance...
             score += guesses;
             alert('That is right! Your score is ' + score + '.');
             guesses = 0; //resets loop
@@ -74,11 +160,13 @@ function stateQuiz(instance){ //instance will be var statesAndCapitals
             }
         }
     }
-    
 }
 
-alert('STATE CAPITAL QUIZ\r\rCheck if you know the names of three states\' capital cities. Make sure you spell each guess correctly and capitalize it.\r\rGood luck!'); // Intro to quiz
+alert('STATE CAPITAL QUIZ\r\rCheck if you know the names of three states\' capital cities.\r\rGood luck!'); // Intro to quiz
 
-for (i=0; i<=statesAndCapitals.length; i++){
-    stateQuiz(statesAndCapitals[i]);
+for (i=0; i<statesAndCapitals.length; i++){
+    Quiz(statesAndCapitals[i]);
 }
+
+percentage = (score/9)*100; // calc. %
+percentage = percentage.toFixed(2); // round by 2 decimal points\

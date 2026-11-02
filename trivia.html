@@ -37,7 +37,12 @@ November 1, 2026
             <h3>Quote of the Day</h3>
                 <script>quoteOfTheDay();</script>
             <h3>Quiz</h3>
-                <script>quiz();</script>
+                <script>
+                    var message = 'Your final score is ' + score + '!';
+                    var messageTwo = 'That is ' + percentage + '%!';
+                    document.write('<p>' + message + '</p>');
+                    document.write('<p>' + messageTwo + '</p>')
+                </script>
 		</section>
     </main>
     <footer>
