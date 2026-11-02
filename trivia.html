@@ -1,20 +1,22 @@
 <!DOCTYPE html>
-<!--Lesson 7: Functions
+<!--
+Lesson 7: Strings, Numbers, Dates, and Regular Expressions
 Jesus Javier Vela Jr.
 2026FA-ITSE-1311-1 Beginning Web Programming
 Professor Hyson
-November 1, 2026-->
+November 1, 2026
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz | JJVJ</title> <!--R: Change title if needed-->
-    <script src="quiz.js"></script>
+    <title>Trivia | JJVJ</title>
+    <script src="trivia.js"></script>
 	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Jesus' JavaScript Coursework</h1>
+        <h1>Jesus' JavaScript Coursework</h1> <!--Title-->
         <img class="profilePic" src="content/jjvj-untd-portrait-square.jpg" alt="Upper-body portrait of Jesus">
         <nav>
             <a href="index.html">Home</a>
@@ -25,36 +27,17 @@ November 1, 2026-->
         </nav>
     </header>
     <main>
-        <section id="stateCapitalQuiz">
-			<h2 class="hdg">State Capital Quiz</h2>
-            <!-- OLD SCRIPT
-            <script>
-                var score = stateQuiz();
-                document.write('Final Score: ' + points);
-            </script>
-            -->
-            <h3>Score</h3>
-            <!--New script-->
-            <script>
-                var message = 'Your final score is ' + score + '!';
-                document.write('<p>' + message + '</p>');
-            </script>
-
-            <h3>Answer Sheet</h3>
-            <script> //Inspired by Figure 3-5 (McFarland, 2014, p. 92)
-                var x = 0;
-                while (x<3){ 
-                    document.write('<p><b>Q/A:</b> ');
-                    document.write(statesAndCapitals[x][0] + ' ');
-                    document.write('<i>' + statesAndCapitals[x][1] + '.</i></p>');
-                    x++;
-                }
-            </script>
-            <!-- <ol>
-                <li>What is the capital of Texas? (Austin)</li>
-                <li>What is the capital of Georgia? (Atlanta)</li>
-                <li>What is the capital of Colorado? (Denver)</li>
-            </ol> -->
+        <section id="triviaGame">
+			<h2 class="hdg">Trivia</h2> <!--Heading-->
+            <script>timeStamp();</script>
+            <h3>Personalized Greeting</h3>
+                <script>personalizedGreeting();</script> <!--called before quiz function-->
+            <h3>User Information</h3>
+                <script>userInformation();</script> <!--called before quiz function-->
+            <h3>Quote of the Day</h3>
+                <script>quoteOfTheDay();</script>
+            <h3>Quiz</h3>
+                <script>quiz();</script>
 		</section>
     </main>
     <footer>

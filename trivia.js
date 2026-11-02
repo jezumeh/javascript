@@ -1,30 +1,53 @@
 /*
-Lesson 6: Functions
+Lesson 7: Strings, Numbers, Dates, and Regular Expressions
 JJVJ
 2026FA-ITSE-1311-1 Beginning Web Programming
-Professor [add name]
-October 25, 2026
+Professor Hyson
+November 1, 2026
 */
 
-//Array and Variable Declarations
-/* old, separate arrays for q/a
-var question = [
-    'What is the capital of Texas?', //Austin
-    'What is the capital of Georgia?', //Atlanta
-    'What is the capital of Colorado?' //Denver
-];
-var answer = [
-    'Austin', //Texas
-    'Atlanta', //Georgia
-    'Denver' //Colorado
-];
-*/
+// REQUIREMENT: Use the Date Object Methods.
+
+var weekDay = ['Sunday', 'Monday', 'Tuesday', 'Wednesay', 'Thursday', 'Friday', 'Saturday'];
+var monthName = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+var am_pm = ['Night', 'Morning', 'Afternoon', 'Evening'];
+
+var now = new Date(); // As taught by McFarland (2014, p. 492).
+
+var month = monthName[getMonth()]; // i = 0-11/January-December
+var day = weekday[getDay()]; // i = 0-6/Sunday-Saturday
+
+var time = getHours(); // i = 0-23
+
+function timeStamp(){
+    document.write('<p><i>' + month + ' ' + getDate() + ', ' + getFullYear() + '.</i></p>'); // e.g. "<p><i>November 1, 2026.</i></p>"
+}
+
+var inputName;
+
+// REQUIREMENT: Create a personalized greeting.
+
+function personalizedGreeting (){
+    //get someone's name and capitalize it
+
+    //get date x time
+    //make custom greeting
+    document.write('<p>' + 'Good' + am_pm[] + ', '); //customize time
+    document.write(displayName + '. '); //customize name
+    document.write('Today is a lovely ' + weekDay + ' in ' + monthName + '.</p>'); //customize month/date)
+    
+};
+
+// REQUIREMENT: User Information
+
+// REQUIREMENT: Quote of the Day
+
+// REQUIREMENT: Trivia Quiz Improved
 
 var score = 0;
 var guesses = 3; //previously var attempt
-var gL = ['guesses left)', ' guess left)']; // attempts left [aL]. User feedback in prompts (e.g. "3 trys left")
+var gL = ['guesses left)', ' guess left)']; // guesses left [gL] (e.g. "2 guesses left").
 
-//New Q/A nested array, inspired from textbook
 var statesAndCapitals = [
     ['What is the capital of Texas?', 'Austin'], //i=0
     ['What is the capital of Georgia?', 'Atlanta'], //i=1
@@ -35,7 +58,6 @@ function stateQuiz(instance){ //instance will be var statesAndCapitals
     guesses = 3;
     while (guesses > 0){
         var answer = prompt(instance[0], ''); // '' is an empty string in the response box
-        /*score = guesses;*/
         if (answer == instance[1]){
             score += guesses;
             alert('That is right! Your score is ' + score + '.');
@@ -56,42 +78,7 @@ function stateQuiz(instance){ //instance will be var statesAndCapitals
 }
 
 alert('STATE CAPITAL QUIZ\r\rCheck if you know the names of three states\' capital cities. Make sure you spell each guess correctly and capitalize it.\r\rGood luck!'); // Intro to quiz
+
 for (i=0; i<=statesAndCapitals.length; i++){
     stateQuiz(statesAndCapitals[i]);
 }
-
-/*
-var aL = [' trys left)', ' try left)']; // attempts left [aL]. User feedback in prompts (e.g. "3 trys left")
-
-function stateQuiz(){
-    var points = 0;
-
-    alert('STATE CAPITAL QUIZ\r\rCheck if you know the names of three states\' capital cities. Make sure you spell each guess correctly and capitalize it.\r\rGood luck!');
-
-    for (var i = 0; i <= 2; i++){ /* R: change to i <= question.length I think
-        var attempt = 3;
-        var queNum = i; // Question Number [queNum] (e.g. "1. Question...?"")
-
-        while (attempt > 0){ //round of a question
-
-            if (attempt > 1){ // Makes aL singular or plural
-                n = 0; // "# trys left"
-            } else{
-                n = 1; // "# try left"
-            }
-
-            promptQuestion = prompt((queNum+=1) + '. ' + question[i] + ' (' + attempt + aL[n]); //question prompt (e.g. "1. What is the capital of Texas? (1 try left)")
-            
-            if (promptQuestion == answer[i]){ //check array match
-                points += attempt;
-                alert('That is right! Points: ' + points);
-                attempt = 0;
-            } else{
-                alert('That is wrong.');
-                attempt -= 1;
-            }
-        }
-    }
-    document.write('<h2 class="hdg">' + 'Final Score: ' + points + '/9 Points!' + '</h2>'); //final score appears on front end
-}
-*/

@@ -1,10 +1,13 @@
 # javascript
 
-## Header
+## Intro
 
 Jesus Javier Vela Jr. - JJVJ  
 2026FA-ITSE-1311-1 Beginning Web Programming  
-Professor Hyson
+Professor Hyson  
+Source Material:  
+  -Professor Hyson's eLearning course
+  -McFarland, D. S. (2014). JavaScript & jQuery: The missing manual (3rd ed.). O'Reilly. Kortext.  
 
 ## Assignment Submissions
 
